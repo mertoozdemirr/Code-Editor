@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Code Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="_assets/css/all-style.min.css" type="text/css" rel="stylesheet">
+    <link href="_assets/css/editor/cloudEdit.css" rel="stylesheet">
+    <link href="_assets/css/editor/contextMenu.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="code-editor-box container">
+
+        <div class="btn-box d-flex">
+            <select class="form-control template-select" id="template-select">
+                <option value="0">HISTORY</option>
+            </select>
+            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#templateModal">SAVE</button>
+        </div>
+
+        <div class="preview">
+            <iframe id="iframe" name="CloudEdit"
+                    sandbox="allow-scripts allow-pointer-lock allow-same-origin allow-popups allow-forms"
+                    allowtransparency="true">
+            </iframe>
+            <span class="windowLabel" id="iframeLabel">Preview</span>
+            <span id="iframeClose">x</span>
+        </div>
+        <div class="btn-box">
+            <button class="btn btn-outline-primary mr-3" id="minimize-btn" title="Run...">Minimize</button>
+            <button class="btn btn-outline-primary" id="run" title="Run...">Run</button>
+        </div>
+        <div class="row window-box">
+            <div class="col-md-4">
+                <div class="window html">
+                    <pre id="html"></pre>
+                    <span class="windowLabel" id="htmlLabel">HTML</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="window css">
+                    <pre id="css"></pre>
+                    <span class="windowLabel" id="cssLabel">CSS</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="window js">
+                    <pre id="js"></pre>
+                    <spn class="windowLabel" id="jsLabel">JavaScript</spn>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="templateModal" tabindex="-1" role="dialog" aria-labelledby="templateModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Template Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="template-input" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="_assets/js/editor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_assets/js/editor/ace/ext-emmet.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_assets/js/editor/ace/emmet.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_assets/js/editor/jquery.ui.position.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_assets/js/editor/contextMenu.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_assets/js/editor/jqconsole.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_assets/js/editor/cloudEdit.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="_assets/js/editor-config.js" type="text/javascript"></script>
+</body>
+
+</html>
